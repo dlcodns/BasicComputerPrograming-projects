@@ -72,7 +72,7 @@ int main(void) {
       cout << "\n1 ~ 9 사이의 정수가 아닙니다. 다시 입력해주세요.\n\n" << endl;
       continue;
     }
-    int number[num];
+    int* number = new int[num];    //동적할당
     
     cout << "• 0 ~ 9 사이의 " << num << "개의 서로 다른 정수를 입력하세요. >> ";
     for(int i=0;i<num;i++){
