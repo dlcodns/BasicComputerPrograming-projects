@@ -1,29 +1,31 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <cstring>
 
 using namespace std;
 
-void rever(string& stu,int i, int j) {    
-	int c, i, j;
-
-	for (i < j; i++, j--;) {
-		c = stu[i];
-		stu[i] = stu[j];
-		stu[j] = c;
-	}
+void rever(char* str, int i, int j) 
+{
+    while (i < j) {
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        i++;
+        j--;
+    }
 }
 
 int main() 
 {
-    string stu;
-    getline(cin, stu);
+    char str[50];
+    cin.getline(str, 50);
+    int len = strlen(str);
 
-	rever(stu,0,6);
-	rever(stu, 4, 5);
-	rever(stu, 5, 12);
-	rever(stu, 2, 6);
+    rever(str, 0, 6);
+    rever(str, 4, 5);
+    rever(str, 5, 12);
+    rever(str, 2, 6);
 
-	cout << stu << endl;
+    cout << str << endl;
 
-	return 0;
+    return 0;
 }
